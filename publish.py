@@ -7,7 +7,7 @@ import time
 from paho.mqtt import client as mqtt_client
 
 
-broker = 'olegkorzun.me'
+broker = '63.250.63.228'
 port = 1883
 topic = "rtbigdata"
 client_id = "py_mqtt_c2"
@@ -30,7 +30,7 @@ def publish(client):
     msg_count = 0
     while True:
         time.sleep(1)
-        msg = '{message:'+str(msg_count)+'}'
+        msg = '{"message":'+str(msg_count)+'}'
         result = client.publish(topic, msg)
         # result: [0, 1]
         status = result[0]
